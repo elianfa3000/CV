@@ -1,0 +1,17 @@
+# Dependencias
+node_modules/
+# Build
+dist/
+# Variables de entorno
+.env
+.env.*.local
+# Logs
+*.log
+# Cache de herramientas
+.eslintcache
+*.tsbuildinfo
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

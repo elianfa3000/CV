@@ -1,0 +1,115 @@
+/* ===== NAVBAR (versión escritorio) ===== */
+.navbar {
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 50;
+}
+
+.link {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: #d1d5db;
+  text-shadow: 4px 4px 20px #ffffff;
+}
+
+/* ===== BOTÓN MÓVIL ===== */
+.menuButton {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: rgba(0, 0, 0, 0.323); /* traslúcido */
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+  transition: all 0.4s ease-in-out;
+  display: none; /* oculto por defecto en escritorio */
+}
+
+.menuButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ===== LINKS DE ESCRITORIO ===== */
+.linksDesktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ===== RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* ocultamos el navbar centrado */
+  }
+
+  .linksDesktop {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex; /* mostramos el botón flotante */
+  }
+}
+
+/*OVERLAY (menú móvil fullscreen)*/
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.overlayLink {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.overlayLink:hover {
+  color: #a5c4f3;
+  cursor: pointer;
+  text-shadow: 4px 4px 20px #ffffff;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
